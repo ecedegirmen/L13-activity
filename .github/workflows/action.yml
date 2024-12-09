@@ -27,3 +27,17 @@ jobs:
         steps:
             - name: Deploy to Github pages
               uses: actions/deploy-pages@v4
+
+
+    spellcheck:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout repo
+            uses: actions/checkout@v4
+
+          - name: Run Spellcheck
+            uses: rojopolis/spellcheck-github-actions@0.21.1
+            with:
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              spelling_blacklist: "GitHub,HTML,python"
+              spelling_files: "*.md"

@@ -36,7 +36,7 @@ jobs:
             uses: actions/checkout@v4
 
           - name: Run Spellcheck
-            uses: rojopolis/spellcheck-github-actions@0.21.1
+            uses: rojopolis/spellcheck-github-actions@0.45.0
             with:
               github_token: ${{ secrets.GITHUB_TOKEN }}
               spelling_blacklist: "GitHub,HTML,python"
